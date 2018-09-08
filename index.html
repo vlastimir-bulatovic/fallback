@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fallback</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--  JQuery 3.3.1 fallback -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        if(typeof $ == 'undefined') {
+            document.write(unescape("%3Cscript src='js/jquery-3.3.1.js'type='text/javascript'%3E%3C/script%3E"));
+            console.log("Jquery fallback works")
+        }
+    </script>
+    <!-- Bootstrap 4 js fallback -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        if(typeof $.fn.modal == 'undefined') {
+            document.write(unescape("%3Cscript src='js/bootstrap.min.js'type='text/javascript'%3E%3C/script%3E"));
+            console.log("Bootstrap js fallback works");
+        }
+    </script>
+
+    <link rel="stylesheet" href="https:maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+</head>
+<body>
+
+    <div id="id" class="d-none">
+        djkssh
+    </div>
+
+    <!-- Bootstrap 4 css fallback -->
+    <script type="text/javascript">
+        var offsetHeight = document.getElementById('id').offsetWidth;
+            console.log(offsetHeight);
+
+        if( offsetHeight > 0 ){  
+            $('head').prepend('<link rel="stylesheet" href="style/css/bootstrap.min.css">'); 
+            console.log("Bootstrap css falbeck work")
+
+        }
+    </script>
+</body>
+</html>
